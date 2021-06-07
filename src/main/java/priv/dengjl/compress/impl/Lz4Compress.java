@@ -16,7 +16,7 @@ import priv.dengjl.compress.AbstractCompress;
  * 
  * 依赖于lz4包
  * 
- * @author it
+ * @author wwei
  */
 public class Lz4Compress extends AbstractCompress {
 

@@ -7,9 +7,9 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 /**
- * 重构gzip、bzip2、lz4、lzo重复代码
+ * 重构
  * 
- * @author it
+ * @author wwei
  */
 public abstract class AbstractCompress implements Compress {
 	

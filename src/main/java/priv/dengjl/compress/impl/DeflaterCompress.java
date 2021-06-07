@@ -10,16 +10,9 @@ import priv.dengjl.compress.Compress;
 
 /**
  * deflater压缩,基于java jdk
+ *
  * 
- * <p>继承关系,基于FilterOutputStream的包装流</p>
- * <pre>
- * java.lang.Object
- *   java.io.OutputStream
- *     java.io.FilterOutputStream
- *       java.util.zip.DeflaterOutputStream
- * </pre>
- * 
- * @author it
+ * @author wwei
  */
 public class DeflaterCompress implements Compress {
 

@@ -18,7 +18,7 @@ import priv.dengjl.compress.AbstractCompress;
  * 
  * 依赖于lzo-core包
  * 
- * @author it
+ * @author wwei
  */
 public class LzoCompress extends AbstractCompress {
 

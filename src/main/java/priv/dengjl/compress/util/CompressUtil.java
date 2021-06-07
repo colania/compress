@@ -8,6 +8,8 @@ import priv.dengjl.compress.impl.GzipCompress;
 import priv.dengjl.compress.impl.Lz4Compress;
 import priv.dengjl.compress.impl.LzoCompress;
 import priv.dengjl.compress.impl.SnappyCompress;
+import sun.misc.BASE64Decoder;
+import sun.misc.BASE64Encoder;
 
 public enum CompressUtil {
 	DEFLATER {
@@ -20,6 +22,17 @@ public enum CompressUtil {
 		public byte[] uncompress(byte[] data) throws IOException {
 			return compress.uncompress(data);
 		}
+
+		public String compress(String data) throws IOException{
+			byte[] resultBytes = compress.compress(data.getBytes());
+			return new BASE64Encoder().encode(resultBytes);
+		}
+
+		public String uncompress(String data) throws IOException {
+			byte[] bytes = new BASE64Decoder().decodeBuffer(data);
+			byte[] uncompressBytes = compress.uncompress(bytes);
+			return new String(uncompressBytes);
+		}
 	},
 	BZIP2 {
 		Compress compress = new LzoCompress();
@@ -31,6 +44,17 @@ public enum CompressUtil {
 		public byte[] uncompress(byte[] data) throws IOException {
 			return compress.uncompress(data);
 		}
+
+		public String compress(String data) throws IOException{
+			byte[] resultBytes = compress.compress(data.getBytes());
+			return new BASE64Encoder().encode(resultBytes);
+		}
+
+		public String uncompress(String data) throws IOException {
+			byte[] bytes = new BASE64Decoder().decodeBuffer(data);
+			byte[] uncompressBytes = compress.uncompress(bytes);
+			return new String(uncompressBytes);
+		}
 	},
 	GZIP {
 		Compress compress = new GzipCompress();
@@ -41,6 +65,17 @@ public enum CompressUtil {
 
 		public byte[] uncompress(byte[] data) throws IOException {
 			return compress.uncompress(data);
+		}
+
+		public String compress(String data) throws IOException{
+			byte[] resultBytes = compress.compress(data.getBytes());
+			return new BASE64Encoder().encode(resultBytes);
+		}
+
+		public String uncompress(String data) throws IOException {
+			byte[] bytes = new BASE64Decoder().decodeBuffer(data);
+			byte[] uncompressBytes = compress.uncompress(bytes);
+			return new String(uncompressBytes);
 		}
 	},
 	LZ4 {
@@ -75,6 +110,17 @@ public enum CompressUtil {
 		public byte[] uncompress(byte[] data) throws IOException {
 			return compress.uncompress(data);
 		}
+
+		public String compress(String data) throws IOException{
+			byte[] resultBytes = compress.compress(data.getBytes());
+			return new BASE64Encoder().encode(resultBytes);
+		}
+
+		public String uncompress(String data) throws IOException {
+			byte[] bytes = new BASE64Decoder().decodeBuffer(data);
+			byte[] uncompressBytes = compress.uncompress(bytes);
+			return new String(uncompressBytes);
+		}
 	};
 
 	public byte[] compress(byte[] data) throws IOException {
@@ -84,4 +130,13 @@ public enum CompressUtil {
 	public byte[] uncompress(byte[] data) throws IOException {
 		throw new AbstractMethodError();
 	}
+
+	public String  compress(String data) throws IOException {
+		throw new AbstractMethodError();
+	}
+
+	public String uncompress(String data) throws IOException {
+		throw new AbstractMethodError();
+	}
+
 }

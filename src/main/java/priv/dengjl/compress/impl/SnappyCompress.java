@@ -12,7 +12,7 @@ import priv.dengjl.compress.Compress;
  * 
  * 依赖于snappy-java包
  * 
- * @author it
+ * @author wwei
  */
 public class SnappyCompress implements Compress {
 

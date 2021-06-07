@@ -10,17 +10,9 @@ import priv.dengjl.compress.AbstractCompress;
 
 /**
  * gzip算法
+ *
  * 
- * <p>继承关系,基于DeflaterOutputStream的包装</p>
- * <pre>
- * java.lang.Object
- *   java.io.OutputStream
- *     java.io.FilterOutputStream
- *       java.util.zip.DeflaterOutputStream
- *         java.util.zip.GZIPOutputStream
- * </pre>
- * 
- * @author it
+ * @author wwei
  */
 public class GzipCompress extends AbstractCompress {
 
